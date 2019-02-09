@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileAppsDev2_XamarinProject.AddNotesPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Add Notes page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        
+        <StackLayout Spacing="20" Margin="20" VerticalOptions="StartAndExpand">
+            
+            <Label Text="Note Title:" />
+            <Entry Placeholder="Enter Note Title" />
+            
+            
+            <Label Text="Note Description:" />
+            <Entry Placeholder="Enter Note" />
+
+            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button BackgroundColor="Blue" TextColor="White" Text="Save Note"  />
+                <Button BackgroundColor="Red" TextColor="White" Text="Delete Note" />
+                <Button BackgroundColor="OrangeRed" TextColor="White" Text="Cancel" />
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

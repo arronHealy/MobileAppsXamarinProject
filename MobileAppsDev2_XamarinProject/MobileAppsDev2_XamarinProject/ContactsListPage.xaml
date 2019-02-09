@@ -4,7 +4,7 @@
              x:Class="MobileAppsDev2_XamarinProject.ContactsListPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New Contact" Clicked="NewContact_Clicked"/>
+        <ToolbarItem Text="New Contact" Order="Secondary" Clicked="NewContact_Clicked"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>

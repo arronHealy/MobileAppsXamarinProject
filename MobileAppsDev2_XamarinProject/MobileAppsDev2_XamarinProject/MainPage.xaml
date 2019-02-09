@@ -5,7 +5,7 @@
              x:Class="MobileAppsDev2_XamarinProject.MainPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Page List" Order="Primary" />
+        
         <ToolbarItem Text="Add Notes" Order="Secondary" Clicked="NotesListPage_Clicked" />
         <ToolbarItem Text="Add Contacts" Order="Secondary" Clicked="ContactsListPage_Clicked" />
     </ContentPage.ToolbarItems>
