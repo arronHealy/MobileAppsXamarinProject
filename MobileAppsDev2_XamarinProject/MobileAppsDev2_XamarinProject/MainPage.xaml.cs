@@ -13,5 +13,17 @@ namespace MobileAppsDev2_XamarinProject
         {
             InitializeComponent();
         }
+
+        private void NotesListPage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NotesListPage());
+        }
+
+        private void ContactsListPage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ContactsListPage());
+        }
+
+        
     }
 }
