@@ -2,23 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileAppsDev2_XamarinProject.AddNotesPage">
-    <ContentPage.Content>
-        
-        <StackLayout Spacing="20" Margin="20" VerticalOptions="StartAndExpand">
-            
-            <Label Text="Note Title:" />
-            <Entry Placeholder="Enter Note Title" />
-            
-            
-            <Label Text="Note Description:" />
-            <Entry Placeholder="Enter Note" />
 
-            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="Center">
-                <Button BackgroundColor="Blue" TextColor="White" Text="Save Note"  />
-                <Button BackgroundColor="Red" TextColor="White" Text="Delete Note" />
-                <Button BackgroundColor="OrangeRed" TextColor="White" Text="Cancel" />
+    <ContentPage.Content>
+
+    <StackLayout BackgroundColor="LightGray" Spacing="20" VerticalOptions="Fill">
+
+            <StackLayout Spacing="10" Margin="10">
+                <Label Font="Bold, Italic" Text="Note Title:" />
+                <Entry x:Name="titleField" TextChanged="NoteField_TextChanged" Placeholder="Enter Note Title" Text="{Binding title}" />
+                <Label x:Name="titleError" />
             </StackLayout>
 
-        </StackLayout>
+            <StackLayout Spacing="10" Margin="10">
+                <Label Font="Bold, Italic" Text="Note Content:" />
+                <Entry x:Name="noteField" TextChanged="NoteField_TextChanged" Placeholder="Enter Note Content..." Text="{Binding note}" HeightRequest="150" />
+                <Label x:Name="noteError" />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="saveButton" BorderColor="Black" BorderRadius="10" BackgroundColor="Green" Font="Italic" TextColor="White" Text="Save Note" Clicked="saveNoteClicked"/>
+                <Button BorderColor="Black" BorderRadius="10" BackgroundColor="Red" TextColor="White" Font="Italic" Text="Cancel" Clicked="cancelClicked"/>
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button BorderColor="Black" x:Name="deleteButton" BorderRadius="10" BackgroundColor="Red" Font="Italic" TextColor="White" Text="Delete Note" Clicked="deleteNoteClicked"/>
+            </StackLayout>
+
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

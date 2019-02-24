@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,24 @@ namespace MobileAppsDev2_XamarinProject
 		{
 			InitializeComponent ();
 		}
-	}
+
+        async void saveContactClicked(object sender, EventArgs e)
+        {
+            var contact = (Contact)BindingContext;
+            await App.Contacts.SaveContact(contact);
+            await Navigation.PopAsync();
+        }
+
+        async void deleteContactClicked(object sender, EventArgs e)
+        {
+            var contact = (Contact)BindingContext;
+            await App.Contacts.DeleteContact(contact);
+            await Navigation.PopAsync();
+        }
+
+        async void cancelClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+    }
 }

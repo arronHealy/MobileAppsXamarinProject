@@ -9,24 +9,27 @@
         
         <StackLayout Spacing="20" Margin="20" VerticalOptions="StartAndExpand">
             <Label Text="Contact Name:" />
-            <Entry Placeholder="Enter Name" />
+            <Entry Placeholder="Enter Name" Text="{Binding name}" />
             
             <Label Text="Contact Phone Number:" />
-            <Entry Placeholder="Enter Phone Number" />
-
+            <Entry Placeholder="Enter Phone Number" Text="{Binding phoneNumber}" />
+ 
             <Label Text="Contact Email:" />
-            <Entry Placeholder="Enter Email" />
+            <Entry Placeholder="Enter Email" Text="{Binding email}" />
 
             <Label Text="Contact Address:" />
-            <Entry Placeholder="Enter Address" />
+            <Entry Placeholder="Enter Address" Text="{Binding address}"/>
 
             <Label Text="Contact Company Name:" />
-            <Entry Placeholder="Enter Company Name" />
+            <Entry Placeholder="Enter Company Name" Text="{Binding company}" />
 
             <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="Center">
-                <Button BackgroundColor="Blue" TextColor="White" Text="Save Contact"  />
-                <Button BackgroundColor="Red" TextColor="White" Text="Delete Contact" />
-                <Button BackgroundColor="OrangeRed" TextColor="White" Text="Cancel" />
+                <Button BackgroundColor="Blue" TextColor="White" Text="Save Contact"  Clicked="saveContactClicked"/>
+                <Button BackgroundColor="Red" TextColor="White" Text="Cancel" Clicked="cancelClicked"/>
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button BackgroundColor="Red" TextColor="White" Text="Delete Contact" Clicked="deleteContactClicked"/>
             </StackLayout>
 
         </StackLayout>
