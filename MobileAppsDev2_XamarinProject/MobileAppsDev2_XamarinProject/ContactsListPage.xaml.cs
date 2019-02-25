@@ -13,6 +13,8 @@ namespace MobileAppsDev2_XamarinProject
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ContactsListPage : ContentPage
 	{
+        private List<Contact> contactList;
+
 		public ContactsListPage ()
 		{
 			InitializeComponent ();
@@ -23,17 +25,32 @@ namespace MobileAppsDev2_XamarinProject
             Navigation.PushAsync(new AddContactsPage());
         }
 
+        //override lifecycle method
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            // Reset the 'resume' id, since we just want to re-start here
-            //((App)App.Current).ResumeAtTodoId = -1;
-            listView.ItemsSource = await App.Contacts.GetContactsList();
+            //populate list from database
+            contactList = await App.Contacts.GetContactsList();
+
+            //check if database has items display message to page 
+            if (contactList.Count == 0)
+            {
+                listHeader.Text = "No Contacts Saved Yet! Click Toolbar Tab to Create New Note...";
+            }
+            else
+            {
+                listHeader.Text = "Contacts - " + contactList.Count + " Currently Saved";
+            }
+
+            //assign list items to xaml list view
+            listView.ItemsSource = contactList;
+
         }
 
         async void OnContactAdded(object sender, EventArgs e)
         {
+            //push new contacts page bind new contact object
             await Navigation.PushAsync(new AddContactsPage
             {
                 BindingContext = new Contact()
@@ -42,10 +59,10 @@ namespace MobileAppsDev2_XamarinProject
 
         async void OnListContactSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            //((App)App.Current).ResumeAtTodoId = (e.SelectedItem as TodoItem).ID;
-            //Debug.WriteLine("setting ResumeAtTodoId = " + (e.SelectedItem as TodoItem).ID);
+            //check selected list view item not empty
             if (e.SelectedItem != null)
             {
+                //push new contacts page bind selected list view item as contact object
                 await Navigation.PushAsync(new AddContactsPage
                 {
                     BindingContext = e.SelectedItem as Contact

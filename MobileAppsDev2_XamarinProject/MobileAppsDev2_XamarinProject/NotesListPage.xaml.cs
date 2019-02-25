@@ -43,7 +43,7 @@ namespace MobileAppsDev2_XamarinProject
         }
 
 
-        async void OnNoteAdded(object sender, EventArgs e)
+        async void noteAdded(object sender, EventArgs e)
         {
             //push new notes page bind new note object 
             await Navigation.PushAsync(new AddNotesPage
@@ -52,7 +52,7 @@ namespace MobileAppsDev2_XamarinProject
             });
         }
 
-        async void OnListNoteSelected(object sender, SelectedItemChangedEventArgs e)
+        async void listNoteSelected(object sender, SelectedItemChangedEventArgs e)
         {
            //check selected list view item not empty
             if (e.SelectedItem != null)

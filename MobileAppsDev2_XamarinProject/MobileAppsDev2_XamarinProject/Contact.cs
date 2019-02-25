@@ -23,9 +23,7 @@ namespace MobileAppsDev2_XamarinProject
         //contact address
         public string address { get; set; }
 
-        //contact company name
-        public string company { get; set; }
-
+        
         public Contact()
         {
 

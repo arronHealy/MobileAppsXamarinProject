@@ -10,36 +10,38 @@
     
     <ContentPage.Content>
 
-        <ListView x:Name="listView" Margin="20" ItemSelected="OnListContactSelected">
+        <ListView x:Name="listView" BackgroundColor="Gray" VerticalOptions="Fill" ItemSelected="OnListContactSelected">
+
+            <ListView.Header>
+                <StackLayout BackgroundColor="Black">
+                    <Label Font="Bold, Italic" TextColor="White" x:Name="listHeader" HorizontalOptions="Center" />
+                </StackLayout>
+            </ListView.Header>
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
 
-                        <StackLayout Spacing="5" Margin="20,0,0,0" VerticalOptions="StartAndExpand">
+                        <StackLayout BackgroundColor="LightGray" Spacing="5" Margin="0,0,0,5" VerticalOptions="StartAndExpand">
 
                             <StackLayout Margin="0, 10, 0, 10" Orientation="Horizontal">
-                                <Label Text="Contact Name:" />
-                                <Label Text="{Binding name}" />
+                                <Label Font="Bold" Text="Contact Name: " />
+                                <Label Font="Italic" TextColor="White" Text="{Binding name}" />
                             </StackLayout>
 
                             <StackLayout Margin="0, 10, 0, 10" Orientation="Horizontal">
-                                <Label Text="Contact Phone Number:" />
-                                <Label Text="{Binding phoneNumber}" />
+                                <Label Font="Bold" Text="Contact Phone Number: " />
+                                <Label Font="Italic" TextColor="White" Text="{Binding phoneNumber}" />
                             </StackLayout>
 
                             <StackLayout Margin="0, 10, 0, 10" Orientation="Horizontal">
-                                <Label Text="Contact Email:" />
-                                <Label Text="{Binding email}" />
+                                <Label Font="Bold" Text="Contact Email: " />
+                                <Label Font="Italic" TextColor="White" Text="{Binding email}" />
                             </StackLayout>
 
                             <StackLayout Margin="0, 10, 0, 10" Orientation="Horizontal">
-                                <Label Text="Contact Address:" />
-                                <Label Text="{Binding address}" />
-                            </StackLayout>
-
-                            <StackLayout Margin="0, 10, 0, 10" Orientation="Horizontal">
-                                <Label Text="Contact Company Name:" />
-                                <Label Text="{Binding company}" />
+                                <Label Font="Bold" Text="Contact Address:" />
+                                <Label Font="Italic" TextColor="White" Text="{Binding address}" />
                             </StackLayout>
 
                         </StackLayout>

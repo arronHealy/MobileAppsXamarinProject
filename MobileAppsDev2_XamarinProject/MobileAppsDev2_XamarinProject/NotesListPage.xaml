@@ -5,14 +5,13 @@
     
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New Note" Order="Secondary" Clicked="OnNoteAdded"/>
+        <ToolbarItem Text="New Note" Order="Secondary" Clicked="noteAdded"/>
     </ContentPage.ToolbarItems>
 
-   
+
     <ContentPage.Content>
-        
-       
-        <ListView x:Name="listView" BackgroundColor="Gray" VerticalOptions="StartAndExpand" ItemSelected="OnListNoteSelected">
+
+        <ListView x:Name="listView" BackgroundColor="Gray" VerticalOptions="StartAndExpand" ItemSelected="listNoteSelected">
             
             <ListView.Header>
                 <StackLayout BackgroundColor="Black">
